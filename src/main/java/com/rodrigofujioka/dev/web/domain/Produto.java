@@ -2,8 +2,16 @@ package com.rodrigofujioka.dev.web.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Produto {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
 	private String marca;
@@ -63,6 +71,12 @@ public class Produto {
 	}
 	public void setLocalFabricacao(String localFabricacao) {
 		this.localFabricacao = localFabricacao;
+	}
+	public LocalDate getDataAlteracao() {
+		return dataAlteracao;
+	}
+	public void setDataAlteracao(LocalDate dataAlteracao) {
+		this.dataAlteracao = dataAlteracao;
 	}
 	
 
